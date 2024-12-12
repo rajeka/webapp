@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/wallet1.jpeg";
 const Logo = () => {
   return (
-    <a className="navbar-brand" href="#">
+    <Link className="navbar-brand" to="/">
       <img
         src={logo}
         alt="logo"
@@ -9,7 +10,7 @@ const Logo = () => {
         height={48}
         className="rounded-circle"
       />
-    </a>
+    </Link>
   );
 };
 
