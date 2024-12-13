@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./login/Login";
 import Register from "./register/Register";
-import NewExpense from "./expense/NewExpense";
-import ExpenseDetails from "./expense/ExpenseDetails";
-import Reports from "./expense/Reports";
+import NewExpense from "./pages/expense/NewExpense";
+import ExpenseDetails from "./pages/expense/ExpenseDetails";
+import Reports from "./pages/expense/Reports";
 
 const App = () => {
   return (

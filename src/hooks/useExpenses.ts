@@ -9,7 +9,7 @@ const useExpenses = () => {
 
   useEffect(() => {
     getExpenses()
-      .then((response) => setExpenses(response.data))
+      .then((res) => setExpenses(res.data))
       .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
   }, []);

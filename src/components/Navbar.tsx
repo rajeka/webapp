@@ -1,7 +1,6 @@
 import { FaBars } from "react-icons/fa";
 import Logo from "./Logo";
-import { Link, NavLink } from "react-router-dom";
-import Expense from "./../model/Expense";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
