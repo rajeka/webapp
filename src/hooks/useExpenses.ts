@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
-import { getExpenses } from "../services.ts/ExpenseService";
+import { getExpenses } from "../services/ExpenseService";
+import Expense from "../model/Expense";
 
 const useExpenses = () => {
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState<Expense[]>([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
