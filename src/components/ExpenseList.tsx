@@ -42,6 +42,3 @@ function ExpenseList({ expenses }: Props) {
 }
 
 export default ExpenseList;
-function getExpenseByExpenseId() {
-  throw new Error("Function not implemented.");
-}
