@@ -12,3 +12,8 @@ export const getExpenseByExpenseId = (expenseId: string) => {
 export const deleteExpenseByExpenseId = (expenseId: string) => {
   return apiClient.delete<Expense>(`/expenses/${expenseId}`);
 };
+
+export const saveOrUpdateExpense = (expense: Expense) => {
+  console.log(expense);
+  return apiClient.post<Expense>("/expenses", expense); // POST for save, PUT for update
+};
