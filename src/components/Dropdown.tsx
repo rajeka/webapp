@@ -31,8 +31,9 @@ const Dropdown = ({
         name={name}
         onChange={onChange}
         onBlur={onBlur}
+        value={value}
       >
-        <option value={value} label={`Select ${label}`} />
+        <option value="" label={`Select ${label}`} />
         {options.map((option) => (
           <option key={option} value={option} label={option} />
         ))}
