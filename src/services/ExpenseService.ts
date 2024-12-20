@@ -14,6 +14,8 @@ export const deleteExpenseByExpenseId = (expenseId: string) => {
 };
 
 export const saveOrUpdateExpense = (expense: Expense) => {
-  console.log(expense);
+  if (expense.expenseId !== undefined || expense.expenseId !== null) {
+    return apiClient.put<Expense>(`/expenses/${expense.expenseId}`, expense);
+  }
   return apiClient.post<Expense>("/expenses", expense); // POST for save, PUT for update
 };
