@@ -12,9 +12,9 @@ export const useLogin = () => {
   const navigate = useNavigate();
   const { updateAuth } = useAuthContext();
 
-  const login = async (authRequest: AuthRequest) => {
+  const login = (authRequest: AuthRequest) => {
     setLoading(true);
-    await authenticate(authRequest)
+    authenticate(authRequest)
       .then((response) => {
         localStorage.setItem("user", JSON.stringify(response.data));
         updateAuth(true);
@@ -28,8 +28,9 @@ export const useLogin = () => {
           error.response.data.message
         ) {
           setErrors(error.response.data.message);
+        } else {
+          setErrors(error.message);
         }
-        setErrors(error.message);
       })
       .finally(() => {
         setLoading(false);

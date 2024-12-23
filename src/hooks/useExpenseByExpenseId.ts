@@ -11,7 +11,10 @@ const useExpenseByExpenseId = (expenseId: string) => {
     setIsLoading(true);
     getExpenseByExpenseId(expenseId)
       .then((res) => setExpense(res.data))
-      .catch((err) => setErrors(err.message))
+      .catch((err) => {
+        console.log(err);
+        setErrors(err.message);
+      })
       .finally(() => setIsLoading(false));
   }, []);
 
