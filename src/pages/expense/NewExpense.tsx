@@ -153,7 +153,7 @@ const NewExpense = () => {
           />
           <button
             type="submit"
-            className="btn btn-sm btn-primary btn-outline-light"
+            className="btn btn-sm btn-outline-light app-primary-bg-color"
           >
             Save
           </button>

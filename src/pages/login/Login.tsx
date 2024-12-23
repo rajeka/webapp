@@ -1,24 +1,19 @@
 import { useFormik } from "formik";
-import { Profile } from "../model/Profile";
-import profileValidationSchema from "../validation/profileValidationSchema";
-import { useRegister } from "../hooks/useRegister";
+import loginValidationSchema from "../../validation/loginValidatioSchema";
+import { AuthRequest } from "../../model/AuthRequest";
+import { useLogin } from "../../hooks/useLogin";
 
-const Register = () => {
-  const { register, loading, errors, toast } = useRegister();
-
-  const formik = useFormik<Profile>({
+const Login = () => {
+  const { login, loading, errors } = useLogin();
+  const formik = useFormik<AuthRequest>({
     initialValues: {
-      name: "",
       email: "",
       password: "",
-      confirmPassword: "",
     },
-    validationSchema: profileValidationSchema,
-    onSubmit: (profile: Profile, { resetForm }) => {
-      // resetForm is formik function to reset form
-      register(profile);
-      resetForm();
-      console.log(profile);
+    validationSchema: loginValidationSchema,
+    onSubmit: (authRequest: AuthRequest) => {
+      console.log(authRequest);
+      login(authRequest);
     },
   });
 
@@ -28,24 +23,7 @@ const Register = () => {
         <form onSubmit={formik.handleSubmit}>
           {loading && <p>Loading...</p>}
           {errors && <p className="text-danger">{errors}</p>}
-          {toast && <p className="text-success">{toast}</p>}
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="name"
-              name="name"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.name && formik.errors.name ? (
-              <div className="text-danger fst-italic">Name is required!</div>
-            ) : null}
-          </div>
+
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
               Email
@@ -82,25 +60,6 @@ const Register = () => {
               </div>
             ) : null}
           </div>
-          <div className="mb-3">
-            <label htmlFor="retypePassword" className="form-label">
-              Retype Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="retypePassword"
-              name="confirmPassword"
-              value={formik.values.confirmPassword}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-              <div className="text-danger fst-italic">
-                Password did not match!
-              </div>
-            ) : null}
-          </div>
           {loading && (
             <button
               type="submit"
@@ -115,7 +74,7 @@ const Register = () => {
               type="submit"
               className="btn btn-sm btn-outline-light app-primary-bg-color"
             >
-              Register
+              Login
             </button>
           )}
         </form>
@@ -123,4 +82,4 @@ const Register = () => {
     </div>
   );
 };
-export default Register;
+export default Login;
