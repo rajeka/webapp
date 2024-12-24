@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
-import { Profile } from "../model/Profile";
-import profileValidationSchema from "../validation/profileValidationSchema";
-import { useRegister } from "../hooks/useRegister";
+import { Profile } from "../../model/Profile";
+import profileValidationSchema from "../../validation/profileValidationSchema";
+import { useRegister } from "../../hooks/useRegister";
 
 const Register = () => {
   const { register, loading, errors, toast } = useRegister();
@@ -118,6 +118,13 @@ const Register = () => {
               Register
             </button>
           )}
+          <button
+            className="btn btn-sm btn-outline-light app-primary-bg-color"
+            onClick={formik.handleReset}
+            type="reset"
+          >
+            Reset
+          </button>
         </form>
       </div>
     </div>

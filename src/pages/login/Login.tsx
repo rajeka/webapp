@@ -72,11 +72,18 @@ const Login = () => {
           {!loading && (
             <button
               type="submit"
-              className="btn btn-sm btn-outline-light app-primary-bg-color"
+              className="btn btn-sm btn-outline-light app-primary-bg-color mx-1"
             >
               Login
             </button>
           )}
+          <button
+            className="btn btn-sm btn-outline-light app-primary-bg-color"
+            onClick={formik.handleReset}
+            type="reset"
+          >
+            Reset
+          </button>
         </form>
       </div>
     </div>

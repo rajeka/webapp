@@ -8,7 +8,9 @@ const expenseValidationSchema = () => {
     amount: Yup.number()
       .required("Amount is required")
       .positive("Amount must be positive"),
-    date: Yup.date().required("Date is required"),
+    date: Yup.date()
+      .required("Date is required")
+      .max(new Date(), "Cann't accept future date"),
     category: Yup.string().required("Category is required"),
   });
 };

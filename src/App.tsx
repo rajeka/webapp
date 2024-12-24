@@ -7,7 +7,7 @@ import {
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/login/Login";
-import Register from "./register/Register";
+import Register from "./pages/register/Register";
 import NewExpense from "./pages/expense/NewExpense";
 import ExpenseDetails from "./pages/expense/ExpenseDetails";
 import Reports from "./pages/expense/Reports";

@@ -34,3 +34,13 @@ nav,
   color: white;
   border-color: white;
 }
+
+.login-background {
+  background-image: url("./assets/login-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -18,7 +18,7 @@ const NewExpense = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [initialValues, setInitialValues] = useState<Expense>({
     name: "",
-    amount: 0,
+    amount: "",
     note: "",
     date: new Date().toISOString().split("T")[0],
     category: "",
@@ -156,6 +156,13 @@ const NewExpense = () => {
             className="btn btn-sm btn-outline-light app-primary-bg-color"
           >
             Save
+          </button>
+          <button
+            className="btn btn-sm btn-outline-light app-primary-bg-color"
+            onClick={formik.handleReset}
+            type="reset"
+          >
+            Reset
           </button>
         </form>
       </div>
