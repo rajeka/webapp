@@ -30,7 +30,7 @@ function ExpenseList({ expenses }: Props) {
               </div>
               <div className="card-subtitle">
                 <span className="badge rounded-pill app-primary-bg-color">
-                  {CurrencyUtils.formatToUSD(expense.amount)}
+                  {CurrencyUtils.formatToUSD(parseFloat(expense.amount))}
                 </span>
               </div>
             </div>
